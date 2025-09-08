@@ -1,0 +1,104 @@
+[user]
+    name = Juan Diaz
+    email = juanben10xlr99@gmail.com
+    
+[core]
+    editor = code --wait
+    autocrlf = input
+    excludesfile = ~/.gitignore
+    untrackedCache = true
+
+    
+[init]
+    defaultBranch = main
+
+[apply]
+	# Detect whitespace errors when applying a patch.
+	whitespace = fix
+
+[pull]
+    rebase = true
+    
+[push]
+    default = simple
+    followTags = true
+    autoSetupRemote = true
+
+[branch]
+	# Show most recently changed branches first.
+	sort = -committerdate
+
+[merge]
+    tool = vscode
+    
+[mergetool "vscode"]
+    cmd = code --wait $MERGED
+    
+[diff]
+    tool = vscode
+    
+[difftool "vscode"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+    
+[help]
+    autocorrect = 1
+
+[alias]
+    # Basic shortcuts
+    st = status -s
+    cam = commit -am
+     
+    # Logging
+    lg = log --pretty=oneline -n 20 --graph --abbrev-commit
+    
+    # Useful commands
+    unstage = reset HEAD --
+    last = log -1 HEAD
+    undo = reset --soft HEAD^
+    stash-all = stash save --include-untracked
+    
+    # Branch management
+    cleanup = "!git branch --merged | grep -v '\\*\\|main\\|master\\|develop' | xargs -n 1 git branch -d"
+    
+[color]
+    ui = auto
+    
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+    
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+    
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+
+# URL shorthands
+# These allow short remote specifiers:
+#   gh:user/repo   -> git@github.com:user/repo
+#   github:user/repo (when pushing) -> rewritten to SSH (git@github.com:user/repo)
+#   gst:id         -> git@gist.github.com:id
+#   gist:id (when pushing) -> rewritten to SSH (git@gist.github.com:id)
+# 'pushInsteadOf' means if you cloned with the given prefix, push will use the SSH form.
+
+[url "git@github.com:"]
+    insteadOf = "gh:"
+    pushInsteadOf = "github:"
+    pushInsteadOf = "git://github.com/"
+
+[url "git://github.com/"]
+    insteadOf = "github:"
+
+[url "git@gist.github.com:"]
+    insteadOf = "gst:"
+    pushInsteadOf = "gist:"
+    pushInsteadOf = "git://gist.github.com/"
+
+[url "git://gist.github.com/"]
+    insteadOf = "gist:"

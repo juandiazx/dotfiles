@@ -1,0 +1,64 @@
+{
+  "vim.timeout": 200,
+  "vim.useSystemClipboard": true,
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["k", "j"],
+      "after": ["<Esc>", "l"]
+    }
+  ],
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorCustomizations": {
+    "terminal.background":"#000000",
+    "terminal.foreground":"#CBD6E2",
+    "terminalCursor.background":"#CBD6E2",
+    "terminalCursor.foreground":"#CBD6E2",
+    "terminal.ansiBlack":"#0B1C2C",
+    "terminal.ansiBlue":"#8B56BF",
+    "terminal.ansiBrightBlack":"#627E99",
+    "terminal.ansiBrightBlue":"#8B56BF",
+    "terminal.ansiBrightCyan":"#568BBF",
+    "terminal.ansiBrightGreen":"#56BF8B",
+    "terminal.ansiBrightMagenta":"#BF568B",
+    "terminal.ansiBrightRed":"#BF8B56",
+    "terminal.ansiBrightWhite":"#F7F9FB",
+    "terminal.ansiBrightYellow":"#8BBF56",
+    "terminal.ansiCyan":"#568BBF",
+    "terminal.ansiGreen":"#56BF8B",
+    "terminal.ansiMagenta":"#BF568B",
+    "terminal.ansiRed":"#BF8B56",
+    "terminal.ansiWhite":"#CBD6E2",
+    "terminal.ansiYellow":"#8BBF56"
+  },
+  "terminal.integrated.fontSize": 14,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "files.autoSave": "afterDelay",
+  "workbench.editorAssociations": {
+    "*.bd": "default"
+  },
+  "extensions.ignoreRecommendations": true,
+  "editor.fontSize": 17,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "window.zoomLevel": 0.2,
+  "editor.codeLens": false,
+  "editor.fontFamily": "'Fira Code'",
+  "editor.fontLigatures": true,
+  "workbench.editor.enablePreview": false,
+  "github.copilot.editor.enableAutoCompletions": true,
+  "go.toolsManagement.autoUpdate": true,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
+  "editor.formatOnPaste": true,
+  "breadcrumbs.enabled": false,
+  "editor.minimap.enabled": false,
+  "workbench.statusBar.visible": false,
+  "editor.lineNumbers": "relative",
+  "terminal.integrated.cursorBlinking": true
+}

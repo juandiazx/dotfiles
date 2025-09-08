@@ -1,0 +1,123 @@
+# Find file by name
+findfile() {
+    find . -name "*$1*" -type f
+}
+
+# Find directory by name
+finddir() {
+    find . -name "*$1*" -type d
+}
+
+# Search in files
+searchin() {
+    grep -r "$1" .
+}
+
+# Docker cleanup function
+docker-cleanup() {
+    echo "Removing stopped containers..."
+    docker container prune -f
+    echo "Removing unused images..."
+    docker image prune -f
+    echo "Removing unused volumes..."
+    docker volume prune -f
+    echo "Removing unused networks..."
+    docker network prune -f
+}
+
+# Start a new project structure
+newproject() {
+    if [ -z "$1" ]; then
+        echo "Usage: newproject project-name"
+        return 1
+    fi
+    mkdir -p "$1"/{src,tests,docs,scripts}
+    cd "$1"
+    git init
+    echo "# $1" > README.md
+    echo "node_modules/" > .gitignore
+    echo "Project $1 initialized!"
+}
+
+# Extract archives
+extract() {
+    if [ -f "$1" ]; then
+        case $1 in
+            *.tar.bz2)   tar xjf "$1"     ;;
+            *.tar.gz)    tar xzf "$1"     ;;
+            *.bz2)       bunzip2 "$1"     ;;
+            *.rar)       unrar x "$1"     ;;
+            *.gz)        gunzip "$1"      ;;
+            *.tar)       tar xf "$1"      ;;
+            *.tbz2)      tar xjf "$1"     ;;
+            *.tgz)       tar xzf "$1"     ;;
+            *.zip)       unzip "$1"       ;;
+            *.Z)         uncompress "$1"  ;;
+            *.7z)        7z x "$1"        ;;
+            *)           echo "'$1' cannot be extracted via extract()" ;;
+        esac
+    else
+        echo "'$1' is not a valid file"
+    fi
+}
+
+# Port checker
+port() {
+    if [ -z "$1" ]; then
+        echo "Usage: port <port-number>"
+        return 1
+    fi
+    sudo lsof -i ":$1"
+}
+
+# Kill process on port
+killport() {
+    if [ -z "$1" ]; then
+        echo "Usage: killport <port-number>"
+        return 1
+    fi
+    sudo lsof -ti:"$1" | xargs sudo kill -9
+}
+
+#List processes with name filter
+pslist() {
+    if [ -z "$1" ]; then
+        ps aux
+    else
+        ps aux | grep "$1" | grep -v grep
+    fi
+}
+
+#Kill process(es) given PID or name
+pkillf() {
+    if [ -z "$1" ]; then
+        echo "Usage: pkillf <process_name_or_pid>"
+        return 1
+    fi
+
+    # Check if input is a number (PID)
+    if [[ "$1" =~ ^[0-9]+$ ]]; then
+        kill "$1"
+        echo "Killed process $1"
+    else
+        # Kill all processes matching the name
+        pids=$(ps aux | grep "$1" | grep -v grep | awk '{print $2}')
+        if [ -z "$pids" ]; then
+            echo "No process found matching '$1'"
+        else
+            echo "$pids" | xargs kill
+            echo "Killed process(es): $pids"
+        fi
+    fi
+}
+
+
+
+# Backup function
+backup() {
+    if [ -z "$1" ]; then
+        echo "Usage: backup <file-or-directory>"
+        return 1
+    fi
+    cp -r "$1" "$1.backup.$(date +%Y%m%d_%H%M%S)"
+}

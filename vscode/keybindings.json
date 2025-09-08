@@ -1,0 +1,56 @@
+[
+  {
+    "key": "tab",
+    "command": "tab",
+    "when": "editorTextFocus && !editorTabMovesFocus"
+  },
+  {
+    "key": "shift+tab",
+    "command": "outdent",
+    "when": "editorTextFocus && !editorTabMovesFocus"
+  },
+  {
+    "key": "ctrl+d",
+    "command": "extension.vim_ctrl+d",
+    "when": "editorTextFocus && vim.active && vim.use<C-d> && !inDebugRepl"
+  },
+  {
+    "key": "ctrl+d",
+    "command": "editor.action.addSelectionToNextFindMatch",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "-extension.vim_ctrl+p",
+    "when": "editorTextFocus && vim.active && vim.use<C-p> && !inDebugRepl || vim.active && vim.use<C-p> && !inDebugRepl && vim.mode == 'CommandlineInProgress' || vim.active && vim.use<C-p> && !inDebugRepl && vim.mode == 'SearchInProgressMode'"
+  },
+  {
+    "key": "ctrl+a",
+    "command": "-extension.vim_ctrl+a",
+    "when": "editorTextFocus && vim.active && vim.use<C-a> && !inDebugRepl"
+  },
+  {
+    "key": "ctrl+f",
+    "command": "-extension.vim_ctrl+f",
+    "when": "editorTextFocus && vim.active && vim.use<C-f> && !inDebugRepl && vim.mode != 'Insert'"
+  },
+  {
+    "key": "tab",
+    "command": "editor.action.inlineSuggest.commit",
+    "when": "editorTextFocus && inlineSuggestionVisible && !editorTabMovesFocus"
+  },
+  {
+    "key": "tab",
+    "command": "acceptSelectedSuggestion",
+    "when": "editorTextFocus && suggestWidgetVisible && !hasOtherSuggestions"
+  },
+  {
+    "key": "tab",
+    "command": "tab",
+    "when": "editorTextFocus && !suggestWidgetVisible && !inlineSuggestionVisible && !editorTabMovesFocus"
+  },
+  {
+    "key": "shift+k shift+j",
+    "command": "toggleVim"
+  }
+]

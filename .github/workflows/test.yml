@@ -1,0 +1,21 @@
+name: test
+
+on: [push]
+
+jobs:
+  test-ubuntu:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout dotfiles
+        uses: actions/checkout@v4
+
+      - name: Set up environment
+        run: |
+          # Make bootstrap.sh executable
+          chmod +x bootstrap.sh
+
+      - name: Test bootstrap installation
+        run: |
+          # Run bootstrap (this installs packages and links dotfiles)
+          ./bootstrap.sh
