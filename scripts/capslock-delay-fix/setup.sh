@@ -2,7 +2,7 @@
 
 echo "Setting up caps lock delay fix systemd service..."
 
-CAPSLOCK_FIX_SCRIPT="./fix.sh"
+CAPSLOCK_FIX_SCRIPT="$(pwd)/fix.sh"
 
 # Make the script executable
 chmod +x "$CAPSLOCK_FIX_SCRIPT"
