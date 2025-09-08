@@ -10,8 +10,6 @@ CAPSLOCK_SETUP_SCRIPT="./scripts/capslock-delay-fix/setup.sh"
 sudo apt update && sudo apt full-upgrade -y
 
 install() {
-  command -v "$1" >/dev/null 2>&1
-
   if [ $? -ne 0 ]; then
     echo "Installing: $1..."
     sudo apt install -y "$1"
