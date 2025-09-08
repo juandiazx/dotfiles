@@ -51,6 +51,7 @@
   "prettier.jsxSingleQuote": false,
   "prettier.singleQuote": false,
   "prettier.semi": true,
+  "prettier.tabWidth": 4,
   "window.zoomLevel": 0.2,
   "editor.codeLens": false,
   "editor.fontFamily": "'Fira Code'",
