@@ -5,7 +5,7 @@ set -e
 echo "🐹 Installing Go..."
 
 # Get the latest Go version
-LATEST_GO=$(curl -s https://go.dev/VERSION?m=text)
+LATEST_GO=$(curl -s https://go.dev/VERSION?m=text | grep -Eo '^go[0-9.]+')
 GO_VERSION=${LATEST_GO#go}
 
 echo "📦 Installing Go version $GO_VERSION..."
