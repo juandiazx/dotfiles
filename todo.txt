@@ -1,4 +1,0 @@
--check everything works from scratch
--push and test   xd
-
-nvm stuff getting into .bashrc
