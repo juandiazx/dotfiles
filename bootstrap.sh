@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 # Script paths
 SYMLINK_SCRIPT="./scripts/symlink.sh"
 CAPSLOCK_SETUP_SCRIPT="./scripts/capslock-delay-fix/setup.sh"
@@ -19,7 +21,6 @@ install() {
 }
 
 # Basics
-install awscli
 install curl
 install build-essential 
 install file
