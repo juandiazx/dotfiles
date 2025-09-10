@@ -109,6 +109,12 @@ if [ -f "$GIT_PROMPT_SCRIPT" ]; then
     source "$GIT_PROMPT_SCRIPT"
 fi
 
+GIT_COMPLETION_SCRIPT="/usr/share/bash-completion/completions/git"
+# Load bash completion if available
+if [ -f "$GIT_COMPLETION_SCRIPT" ]; then
+    source "$GIT_COMPLETION_SCRIPT"
+fi
+
 # PS1 with dynamic Git info
 export PS1='\[\033[92m\]\u@\h\[\033[0m\]:\[\033[94m\]\w\[\033[0m\]$(__git_ps1 " (\[\033[32m\]%s\[\033[0m\])")\$ '
 
