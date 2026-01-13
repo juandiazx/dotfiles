@@ -1,6 +1,6 @@
 [user]
-    name = Juan Diaz
-    email = juanben10xlr99@gmail.com
+	name = Juan Diaz
+	email = juanben10xlr99@gmail.com
     
 [core]
     editor = code --wait
@@ -49,7 +49,7 @@
     cam = commit -am
      
     # Logging
-    lg = log --pretty=oneline -n 20 --graph --abbrev-commit
+    lg = log --all --pretty=oneline -n 20 --graph --abbrev-commit
     
     # Useful commands
     unstage = reset HEAD --

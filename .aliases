@@ -36,7 +36,6 @@ alias drmi='docker rmi $(docker images -q)'
 # Development shortcuts
 alias python='python3'
 alias pip='pip3'
-alias serve='python3 -m http.server'
 alias mkvenv='python3 -m venv .venv && source .venv/bin/activate'
 
 # Package management

@@ -118,9 +118,15 @@ fi
 # PS1 with dynamic Git info
 export PS1='\[\033[92m\]\u@\h\[\033[0m\]:\[\033[94m\]\w\[\033[0m\]$(__git_ps1 " (\[\033[32m\]%s\[\033[0m\])")\$ '
 
+#Java, we do not need to put Java binary in PATH as openjdk thru apt it is already set up
+export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
+export PATH=$JAVA_HOME/bin:$PATH
+
 # Go environment
 export GOPATH=$HOME/go
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+. "$HOME/.local/bin/env"

@@ -1,56 +1,91 @@
 [
-  {
-    "key": "tab",
-    "command": "tab",
-    "when": "editorTextFocus && !editorTabMovesFocus"
-  },
-  {
-    "key": "shift+tab",
-    "command": "outdent",
-    "when": "editorTextFocus && !editorTabMovesFocus"
-  },
-  {
-    "key": "ctrl+d",
-    "command": "extension.vim_ctrl+d",
-    "when": "editorTextFocus && vim.active && vim.use<C-d> && !inDebugRepl"
-  },
-  {
-    "key": "ctrl+d",
-    "command": "editor.action.addSelectionToNextFindMatch",
-    "when": "editorFocus"
-  },
-  {
-    "key": "ctrl+p",
-    "command": "-extension.vim_ctrl+p",
-    "when": "editorTextFocus && vim.active && vim.use<C-p> && !inDebugRepl || vim.active && vim.use<C-p> && !inDebugRepl && vim.mode == 'CommandlineInProgress' || vim.active && vim.use<C-p> && !inDebugRepl && vim.mode == 'SearchInProgressMode'"
-  },
-  {
-    "key": "ctrl+a",
-    "command": "-extension.vim_ctrl+a",
-    "when": "editorTextFocus && vim.active && vim.use<C-a> && !inDebugRepl"
-  },
-  {
-    "key": "ctrl+f",
-    "command": "-extension.vim_ctrl+f",
-    "when": "editorTextFocus && vim.active && vim.use<C-f> && !inDebugRepl && vim.mode != 'Insert'"
-  },
-  {
-    "key": "tab",
-    "command": "editor.action.inlineSuggest.commit",
-    "when": "editorTextFocus && inlineSuggestionVisible && !editorTabMovesFocus"
-  },
-  {
-    "key": "tab",
-    "command": "acceptSelectedSuggestion",
-    "when": "editorTextFocus && suggestWidgetVisible && !hasOtherSuggestions"
-  },
-  {
-    "key": "tab",
-    "command": "tab",
-    "when": "editorTextFocus && !suggestWidgetVisible && !inlineSuggestionVisible && !editorTabMovesFocus"
-  },
-  {
-    "key": "shift+k shift+j",
-    "command": "toggleVim"
-  }
+    {
+        "key": "tab",
+        "command": "tab",
+        "when": "editorTextFocus && !editorTabMovesFocus"
+    },
+    {
+        "key": "shift+tab",
+        "command": "outdent",
+        "when": "editorTextFocus && !editorTabMovesFocus"
+    },
+    {
+        "key": "ctrl+d",
+        "command": "extension.vim_ctrl+d",
+        "when": "editorTextFocus && vim.active && vim.use<C-d> && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+d",
+        "command": "editor.action.addSelectionToNextFindMatch",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "-extension.vim_ctrl+p",
+        "when": "editorTextFocus && vim.active && vim.use<C-p> && !inDebugRepl || vim.active && vim.use<C-p> && !inDebugRepl && vim.mode == 'CommandlineInProgress' || vim.active && vim.use<C-p> && !inDebugRepl && vim.mode == 'SearchInProgressMode'"
+    },
+    {
+        "key": "ctrl+a",
+        "command": "-extension.vim_ctrl+a",
+        "when": "editorTextFocus && vim.active && vim.use<C-a> && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+f",
+        "command": "-extension.vim_ctrl+f",
+        "when": "editorTextFocus && vim.active && vim.use<C-f> && !inDebugRepl && vim.mode != 'Insert'"
+    },
+    {
+        "key": "capslock",
+        "command": "editor.action.inlineSuggest.commit",
+        "when": "editorTextFocus && inlineSuggestionVisible && !editorTabMovesFocus"
+    },
+    {
+        "key": "tab",
+        "command": "acceptSelectedSuggestion",
+        "when": "editorTextFocus && suggestWidgetVisible && !hasOtherSuggestions"
+    },
+    {
+        "key": "tab",
+        "command": "tab",
+        "when": "editorTextFocus && !suggestWidgetVisible && !inlineSuggestionVisible && !editorTabMovesFocus"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "-extension.vim_ctrl+j",
+        "when": "editorTextFocus && vim.active"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.togglePanel"
+    },
+    {
+        "key": "capslock",
+        "command": "editor.action.inlineSuggest.commit",
+        "when": "inlineEditIsVisible && tabShouldAcceptInlineEdit && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineEditIsVisible && inlineSuggestionVisible && tabShouldAcceptInlineEdit && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editor.hasSelection && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineEditIsVisible && inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editor.hasSelection && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible"
+    },
+    {
+        "key": "tab",
+        "command": "-editor.action.inlineSuggest.commit",
+        "when": "inlineEditIsVisible && tabShouldAcceptInlineEdit && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineEditIsVisible && inlineSuggestionVisible && tabShouldAcceptInlineEdit && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editor.hasSelection && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineEditIsVisible && inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editor.hasSelection && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible"
+    },
+    {
+        "key": "capslock",
+        "command": "editor.action.inlineSuggest.commit",
+        "when": "inInlineEditsPreviewEditor"
+    },
+    {
+        "key": "tab",
+        "command": "-editor.action.inlineSuggest.commit",
+        "when": "inInlineEditsPreviewEditor"
+    },
+    {
+        "key": "capslock",
+        "command": "editor.action.inlineSuggest.jump",
+        "when": "inlineEditIsVisible && tabShouldJumpToInlineEdit && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible"
+    },
+    {
+        "key": "tab",
+        "command": "-editor.action.inlineSuggest.jump",
+        "when": "inlineEditIsVisible && tabShouldJumpToInlineEdit && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible"
+    }
 ]

@@ -4,8 +4,8 @@
 
 ## What this repo does
 
-- Provides shell config, VS Code settings, and small utility scripts.
-- `bootstrap.sh` updates the system, installs a baseline toolset, runs all program setup scripts in `scripts/programs/`, links dotfiles, and applies the Caps Lock delay fix.
+-   Provides shell config, VS Code settings, and small utility scripts.
+-   `bootstrap.sh` updates the system, installs a baseline toolset, runs all program setup scripts in `scripts/programs/`, links dotfiles, and applies the Caps Lock delay fix.
 
 ## Quick start
 
@@ -37,8 +37,9 @@ If re‑using existing keys, place them in `~/.ssh/`, fix perms (`chmod 600 <key
 
 ## After install
 
-- Open a new terminal (group changes like `docker` access need a new session or `newgrp docker`).
-- Verify tooling: `go version`, `docker --version`, `node --version`, `python3 --version`.
+-   Open a new terminal (group changes like `docker` access need a new session or `newgrp docker`).
+-   Verify tooling: `go version`, `docker --version`, `node --version`, `python3 --version`.
+-   Ensure nvidia drivers, GPU, Secure Boot, Firewall, LUKS disk encryption are active
 
 ## Disclaimer
 

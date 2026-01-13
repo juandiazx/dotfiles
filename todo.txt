@@ -1,0 +1,1 @@
+-check if full disk encryption and files encrypted use cryptsetup + LUKS on Linux

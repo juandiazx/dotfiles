@@ -4,7 +4,6 @@ set -e
 
 # Script paths
 SYMLINK_SCRIPT="./scripts/symlink.sh"
-CAPSLOCK_SETUP_SCRIPT="./scripts/capslock-delay-fix/setup.sh"
 
 # Update Ubuntu and get standard repository programs
 sudo apt update && sudo apt full-upgrade -y
@@ -33,6 +32,21 @@ install grep
 install tmux
 install net-tools
 install inxi
+install unattended-upgrades
+
+# Enable security updates only
+sudo dpkg-reconfigure --priority=low unattended-upgrades
+
+# Optional: Ensure only security updates are installed automatically
+sudo tee /etc/apt/apt.conf.d/50unattended-upgrades > /dev/null <<EOF
+Unattended-Upgrade::Allowed-Origins {
+        "\${distro_id}:\${distro_codename}-security";
+};
+Unattended-Upgrade::Automatic-Reboot "false";
+EOF
+
+# Optional: Enable daily timer (systemd) for unattended-upgrades
+sudo systemctl enable --now unattended-upgrades
 
 # Run all scripts in programs/
 for f in scripts/programs/*.sh; do sh "$f" -H; done
@@ -41,10 +55,6 @@ for f in scripts/programs/*.sh; do sh "$f" -H; done
 echo "Linking dotfiles (including VS Code settings)..."
 chmod +x "$SYMLINK_SCRIPT"
 "$SYMLINK_SCRIPT"
-
-# Set up caps lock delay fix
-chmod +x "$CAPSLOCK_SETUP_SCRIPT"
-"$CAPSLOCK_SETUP_SCRIPT"
 
 # Get all upgrades
 sudo apt upgrade -y
