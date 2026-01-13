@@ -9,13 +9,14 @@ SYMLINK_SCRIPT="./scripts/symlink.sh"
 sudo apt update && sudo apt full-upgrade -y
 
 install() {
-  if [ $? -ne 0 ]; then
+  if dpkg -s "$1" >/dev/null 2>&1; then
+    echo "Already installed: $1"
+  else
     echo "Installing: $1..."
     sudo apt install -y "$1"
-  else
-    echo "Already installed: $1"
   fi
 }
+
 
 # Basics
 install curl
